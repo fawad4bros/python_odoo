@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="attendance_view_tree" model="ir.ui.view">
+            <field name="name">Attendance</field>
+            <field name="model">school.managment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- in create -->
+        <record id="attendance_view_form" model="ir.ui.view">
+            <field name="name">Attendance Form</field>
+            <field name="model">school.managment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="student_DOB"/>
+                            </group>
+                            <group>
+                                <field name="roll"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                        <group>
+                            <notebook>
+                                <page string="Teacher Name">
+                                </page>
+                                <page string="Class Name">
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='attendance_action' model='ir.actions.act_window'>
+            <field name="name">Attendance</field>
+            <field name="res_model">school.managment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="School Managment" id="school_managment_base_menu"/>
+
+        <menuitem name="Attendance" id="attendance_menu" parent="school_managment_base_menu" action="attendance_action"/>
+    </data>
+</odoo>

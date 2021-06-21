@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="students_view_tree" model="ir.ui.view">
+            <field name="name">Students Tree</field>
+            <field name="model">students</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- in create -->
+        <record id="students_view_form" model="ir.ui.view">
+            <field name="name">Students Form</field>
+            <field name="model">students</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="student_DOB"/>
+                            </group>
+                            <group>
+                                <field name="roll"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                        <group>
+                            <notebook>
+                                <page string="Teacher Name">
+                                </page>
+                                <page string="Class Name">
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='students_action' model='ir.actions.act_window'>
+            <field name="name">Students</field>
+            <field name="res_model">students</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Students" id="students_menu" parent="school_managment_base_menu" action="students_action"/>
+    </data>
+</odoo>

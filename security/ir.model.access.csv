@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_school_managment,school.managment default,model_school_managment,,1,1,1,1
+access_exams,exams default,model_exams,,1,1,1,1
+access_students,students default,model_students,,1,1,1,1
+access_configuration,configuration default,model_configuration,,1,1,1,1
+access_parent,parent default,model_parent,,1,1,1,1
